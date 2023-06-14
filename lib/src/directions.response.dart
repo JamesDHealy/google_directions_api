@@ -802,6 +802,7 @@ class Step {
         endLocation: _getGeoCoordFromMap(map['end_location']),
         startLocation: _getGeoCoordFromMap(map['start_location']),
         instructions: map['html_instructions'] as String?,
+        maneuver: map['maneuver'] as String?,
         path: (map['path'] as List?)?.mapList((_) => _getGeoCoordFromMap(_)),
         steps: (map['steps'] as List?)?.mapList((_) => Step.fromMap(_)),
         transit: map['transit'] != null
@@ -830,6 +831,11 @@ class Step {
   /// Contains the location of the starting point of this step, as
   /// a single set of lat and lng fields.
   final GeoCoord? startLocation;
+
+  /// Contains maneuver for this step,
+  /// presented as a text string. (Corresponds to ma in
+  /// the [Directions.Step interface][directions_step_interface].)
+  final String? maneuver;
 
   /// Contains formatted instructions for this step,
   /// presented as a text string. (Corresponds to instructions in
