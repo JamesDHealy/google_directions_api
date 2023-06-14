@@ -784,6 +784,7 @@ class Step {
     this.distance,
     this.duration,
     this.endLocation,
+    this.maneuver,
     this.instructions,
     this.path,
     this.startLocation,
